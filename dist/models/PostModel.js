@@ -22,6 +22,17 @@ exports.default = (sequelize, DataTypes) => {
             }),
             allowNull: false
         }
-    }, {});
+    }, {
+        tableName: "posts"
+    });
+    Post.associate = (models) => {
+        Post.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false,
+                field: 'author',
+                name: 'author'
+            }
+        });
+    };
     return Post;
 };
