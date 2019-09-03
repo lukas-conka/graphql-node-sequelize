@@ -34,3 +34,9 @@ export const onListering = (server: Server) =>{
         console.log(`Listening a ${bind}...`)
     }
 }
+
+export const handleError = (error: Error) => {
+    let errorMessage: string = `${error.name}: ${error.message}`
+    console.log(errorMessage)
+    return Promise.reject(new Error(errorMessage))
+}

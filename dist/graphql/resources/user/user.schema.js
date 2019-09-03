@@ -8,7 +8,7 @@ const userTypes = `
         email: String!
         photo: String
         createdAt: String!
-        updateAt: String!
+        updatedAt: String!
         posts(first: Int, offset: Int): [Post!]!
     }
 
